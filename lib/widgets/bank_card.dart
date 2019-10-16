@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
 
 class BankCard extends StatelessWidget {
+  final double buy;
+  final double sell;
+  final String name;
+
+  BankCard({
+    Key key,
+    this.name,
+    this.buy,
+    this.sell,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
+        margin: EdgeInsets.only(bottom: 24),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(10)),
             color: Colors.white,
@@ -34,7 +46,7 @@ class BankCard extends StatelessWidget {
                       child: Padding(
                           padding:
                               EdgeInsets.symmetric(vertical: 6, horizontal: 12),
-                          child: Text('Sogebank',
+                          child: Text(name,
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -52,7 +64,7 @@ class BankCard extends StatelessWidget {
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
                               )),
-                          Text('91.75',
+                          Text('$buy',
                               style: TextStyle(
                                 color: Colors.black.withOpacity(0.81),
                                 fontSize: 48,
@@ -68,7 +80,7 @@ class BankCard extends StatelessWidget {
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                 )),
-                            Text('91.75',
+                            Text('$sell',
                                 style: TextStyle(
                                   color: Colors.black.withOpacity(0.81),
                                   fontSize: 48,
